@@ -1,0 +1,4 @@
+define service ZUI_PRINTQUEUE {
+  expose ZC_PRINTQUEUE_S as PrintQueueAll;
+  expose ZC_PRINTQUEUE as PrintQueue;
+}

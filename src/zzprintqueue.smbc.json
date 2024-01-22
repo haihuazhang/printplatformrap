@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain PrintQueues",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZUI_PRINTQUEUE_O4",
+    "serviceName": "ZUI_PRINTQUEUE_O4",
+    "serviceVersion": "0001",
+    "rootEntitySet": "PrintQueueAll",
+    "name": "PrintQueue",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {},
+    "objectPages": [
+      {
+        "entitySet": "PrintQueueAll",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "PrintQueue",
+        "tableType": "gridTable",
+        "creationModeName": "creationRow",
+        "rowCountMode": "auto"
+      }
+    ]
+  }
+}

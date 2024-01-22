@@ -1,0 +1,62 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'ZC_ZT_PRT_QUEUES', 
+    typeNamePlural: 'ZC_ZT_PRT_QUEUESs'
+  }
+}
+annotate view ZC_ZT_PRT_QUEUES with
+{
+  @UI.facet: [ {
+    id: 'idIdentification', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'ZC_ZT_PRT_QUEUES', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #MEDIUM, 
+    label: 'Queue'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Queue'
+  } ]
+  Queue;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #MEDIUM, 
+    label: 'Name'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Name'
+  } ]
+  Name;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #MEDIUM, 
+    label: 'Plant'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Plant'
+  } ]
+  Plant;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #MEDIUM, 
+    label: 'Usage of Print Queue'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Usage of Print Queue'
+  } ]
+  QueueUsage;
+  
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

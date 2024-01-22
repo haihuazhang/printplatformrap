@@ -1,0 +1,77 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'PrintQueue', 
+    typeNamePlural: 'PrintQueues', 
+    title: {
+      type: #STANDARD, 
+      label: 'PrintQueue', 
+      value: 'Queue'
+    }
+  }
+}
+annotate view ZC_PrintQueue with
+{
+  @UI.identification: [ {
+    position: 1 , 
+    label: 'Queue'
+  } ]
+  @UI.lineItem: [ {
+    position: 1 , 
+    label: 'Queue'
+  } ]
+  @UI.facet: [ {
+    id: 'ZI_PrintQueue', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'PrintQueue', 
+    position: 1 
+  } ]
+  Queue;
+  
+  @UI.identification: [ {
+    position: 2 , 
+    label: 'Name'
+  } ]
+  @UI.lineItem: [ {
+    position: 2 , 
+    label: 'Name'
+  } ]
+  Name;
+  
+  @UI.identification: [ {
+    position: 3 
+  } ]
+  @UI.lineItem: [ {
+    position: 3 
+  } ]
+  Plant;
+  
+  @UI.identification: [ {
+    position: 4 
+  } ]
+  @UI.lineItem: [ {
+    position: 4 
+  } ]
+  QueueUsage;
+  
+  @UI.identification: [ {
+    position: 5 
+  } ]
+  CreatedBy;
+  
+  @UI.identification: [ {
+    position: 6 
+  } ]
+  CreatedAt;
+  
+  @UI.identification: [ {
+    position: 7 
+  } ]
+  LastChangedBy;
+  
+  @UI.identification: [ {
+    position: 8 
+  } ]
+  LastChangedAt;
+}
