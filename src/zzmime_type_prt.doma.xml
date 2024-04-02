@@ -3,13 +3,13 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DD01V>
-    <DOMNAME>ZZDTEMPLATENAME</DOMNAME>
+    <DOMNAME>ZZMIME_TYPE_PRT</DOMNAME>
     <DDLANGUAGE>E</DDLANGUAGE>
     <DATATYPE>CHAR</DATATYPE>
-    <LENG>000050</LENG>
-    <OUTPUTLEN>000050</OUTPUTLEN>
+    <LENG>000128</LENG>
+    <OUTPUTLEN>000128</OUTPUTLEN>
     <LOWERCASE>X</LOWERCASE>
-    <DDTEXT>Form Template Name</DDTEXT>
+    <DDTEXT>Mime Type</DDTEXT>
     <DOMMASTER>E</DOMMASTER>
    </DD01V>
   </asx:values>

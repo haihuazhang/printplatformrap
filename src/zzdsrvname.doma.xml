@@ -10,7 +10,6 @@
     <OUTPUTLEN>000050</OUTPUTLEN>
     <DDTEXT>Service Definition Name</DDTEXT>
     <DOMMASTER>E</DOMMASTER>
-    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </DD01V>
   </asx:values>
  </asx:abap>

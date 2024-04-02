@@ -139,15 +139,15 @@ CLASS lsc_zr_zt_prt_record IMPLEMENTATION.
 
         ELSE.
           "Check Printing
-          IF ls_template-TemplateName = 'LOB01-001'.
+          IF ls_template-templatename = 'LOB01-001'.
             "Create Check Print Record
             CLEAR ls_check_print.
             ls_check_print = VALUE #(
-               HouseBank = lt_keys[ name = 'HOUSEBANK' ]-value
-               HouseBankAccount = lt_keys[ name = 'HOUSEBANKACCOUNT' ]-value
-               OutgoingCheque = lt_keys[ name = 'OUTGOINGCHEQUE' ]-value
-               PaymentCompanyCode = lt_keys[ name = 'PAYMENTCOMPANYCODE' ]-value
-               PaymentMethod = lt_keys[ name = 'PAYMENTMETHOD' ]-value
+               housebank = lt_keys[ name = 'HOUSEBANK' ]-value
+               housebankaccount = lt_keys[ name = 'HOUSEBANKACCOUNT' ]-value
+               outgoingcheque = lt_keys[ name = 'OUTGOINGCHEQUE' ]-value
+               paymentcompanycode = lt_keys[ name = 'PAYMENTCOMPANYCODE' ]-value
+               paymentmethod = lt_keys[ name = 'PAYMENTMETHOD' ]-value
                status = 'PRINTED'
 
              ).
@@ -448,6 +448,13 @@ CLASS lhc_record IMPLEMENTATION.
             lo_mail->set_sender( 'sap@atosausa.com' ).
 
             LOOP AT lt_address INTO DATA(ls_address).
+              " T系统测试专用，传P系统前需要去掉
+              IF ls_address-emailaddress <> 'xinyue.wang03@hand-china.com' AND
+                 ls_address-emailaddress <> 'ying.chen08@hand-china.com'   AND
+                 ls_address-emailaddress <> 'inventory@atosausa.com'.
+                CONTINUE.
+              ENDIF.
+
               lo_mail->add_recipient( CONV #( ls_address-emailaddress ) ).
             ENDLOOP.
 
