@@ -13,8 +13,8 @@ CLASS lsc_zr_zt_prt_record IMPLEMENTATION.
     DATA : lv_error   TYPE abap_boolean,
            lv_message TYPE string.
 
-    DATA : lt_check_print TYPE TABLE OF ztfi001,
-           ls_check_print TYPE ztfi001.
+*    DATA : lt_check_print TYPE TABLE OF ztfi001,
+*           ls_check_print TYPE ztfi001.
 *           ls_check_print TYPE for create zr_tfi001\\zr_tfi001.
 
     IF create-record IS NOT INITIAL.
@@ -138,26 +138,26 @@ CLASS lsc_zr_zt_prt_record IMPLEMENTATION.
 
 
         ELSE.
-          "Check Printing
-          IF ls_template-templatename = 'LOB01-001'.
-            "Create Check Print Record
-            CLEAR ls_check_print.
-            ls_check_print = VALUE #(
-               housebank = lt_keys[ name = 'HOUSEBANK' ]-value
-               housebankaccount = lt_keys[ name = 'HOUSEBANKACCOUNT' ]-value
-               outgoingcheque = lt_keys[ name = 'OUTGOINGCHEQUE' ]-value
-               paymentcompanycode = lt_keys[ name = 'PAYMENTCOMPANYCODE' ]-value
-               paymentmethod = lt_keys[ name = 'PAYMENTMETHOD' ]-value
-               status = 'PRINTED'
-
-             ).
-            APPEND ls_check_print TO lt_check_print.
-          ENDIF.
+*          "Check Printing
+*          IF ls_template-templatename = 'LOB01-001'.
+*            "Create Check Print Record
+*            CLEAR ls_check_print.
+*            ls_check_print = VALUE #(
+*               housebank = lt_keys[ name = 'HOUSEBANK' ]-value
+*               housebankaccount = lt_keys[ name = 'HOUSEBANKACCOUNT' ]-value
+*               outgoingcheque = lt_keys[ name = 'OUTGOINGCHEQUE' ]-value
+*               paymentcompanycode = lt_keys[ name = 'PAYMENTCOMPANYCODE' ]-value
+*               paymentmethod = lt_keys[ name = 'PAYMENTMETHOD' ]-value
+*               status = 'PRINTED'
+*
+*             ).
+*            APPEND ls_check_print TO lt_check_print.
+*          ENDIF.
         ENDIF.
 
       ENDLOOP.
 
-      IF lines( lt_check_print ) > 0.
+*      IF lines( lt_check_print ) > 0.
 *        MODIFY ENTITIES OF zr_tfi001
 *          ENTITY zr_tfi001
 *              EXECUTE createOrUpdateRecord
@@ -180,8 +180,8 @@ CLASS lsc_zr_zt_prt_record IMPLEMENTATION.
 *
 *          ENDLOOP.
 *        ENDIF.
-        MODIFY ztfi001 FROM TABLE @lt_check_print.
-      ENDIF.
+*        MODIFY ztfi001 FROM TABLE @lt_check_print.
+*      ENDIF.
 
     ENDIF.
   ENDMETHOD.
