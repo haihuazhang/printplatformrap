@@ -26,8 +26,8 @@
       {
         "entitySet": "PrintQueue",
         "tableType": "gridTable",
-        "creationModeName": "creationRow",
-        "rowCountMode": "auto"
+        "rowCountMode": "auto",
+        "creationModeName": "creationRow"
       }
     ]
   }

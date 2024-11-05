@@ -445,13 +445,13 @@ CLASS lhc_record IMPLEMENTATION.
       IF lt_address IS NOT INITIAL.
         TRY.
             DATA(lo_mail) = cl_bcs_mail_message=>create_instance( ).
-            lo_mail->set_sender( 'sap@atosausa.com' ).
+            lo_mail->set_sender( 'sap@xxxxxusa.com' ).
 
             LOOP AT lt_address INTO DATA(ls_address).
               " T系统测试专用，传P系统前需要去掉
               IF ls_address-emailaddress <> 'xinyue.wang03@hand-china.com' AND
                  ls_address-emailaddress <> 'ying.chen08@hand-china.com'   AND
-                 ls_address-emailaddress <> 'inventory@atosausa.com'.
+                 ls_address-emailaddress <> 'inventory@xxxxxusa.com'.
                 CONTINUE.
               ENDIF.
 
@@ -462,11 +462,11 @@ CLASS lhc_record IMPLEMENTATION.
 
             DATA(lv_content) = |<p>Dear Customer:</p>| &&
                                |<p>Attached are your A/R Invoice - { ls_data-billingdocument }</p>| &&
-                               |<p>Kind Regards<br>Atosa USA, Inc.</p>| &&
+                               |<p>Kind Regards<br>xxxxx USA, Inc.</p>| &&
                                |<p>Please do not reply to this message. | &&
                                |This is an automated message sent from an unmonitored mailbox. | &&
                                |If you have questions or comments, please email them to | &&
-                               |<a href="mailto:payments@atosausa.com">payments@atosausa.com</a> | &&
+                               |<a href="mailto:payments@xxxxxusa.com">payments@xxxxxusa.com</a> | &&
                                |or call (626)898-7998 Ext. 0018 between 8:30AM and 5:00PM PST Monday through Friday.</p>| &&
                                |<p>This message contains confidential information and is intended only for the individual named. | &&
                                |If you are not the named addressee you should not disseminate, distribute or copy this e-mail. | &&
