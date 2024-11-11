@@ -46,7 +46,13 @@ CLASS lsc_zr_zt_prt_record IMPLEMENTATION.
                 ASSIGN lo_data->* TO <fo_data>.
                 IF sy-subrc = 0.
                   DATA(lt_key_l) = lt_keys.
-                  lt_keys = VALUE #( FOR key IN lt_key_l ( name = key-name value = <fo_data>-(key-name)->*   data_type = key-data_type ) ).
+*                  lt_keys = VALUE #( FOR key IN lt_key_l ( name = key-name value = <fo_data>-(key-name)->*   data_type = key-data_type ) ).
+                  lt_keys = VALUE #( FOR key IN lt_key_l ( name = key-name
+                                                           value = zzcl_odata_utils=>get_internal(
+                                                                      io_elem_ref = CAST #( cl_abap_elemdescr=>describe_by_name( key-data_type ) )
+                                                                      iv_data = <fo_data>-(key-name)->*
+                                                           )
+                                                           data_type = key-data_type ) ).
                 ENDIF.
                 UNASSIGN <fo_data>.
                 FREE lo_data.
@@ -265,8 +271,13 @@ CLASS lhc_record IMPLEMENTATION.
               ASSIGN lo_data->* TO <fo_data>.
               IF sy-subrc = 0.
                 DATA(lt_key_l) = lt_keys.
-                lt_keys = VALUE #( FOR key IN lt_key_l ( name = key-name value = <fo_data>-(key-name)->* data_type = key-data_type ) ).
-
+*                lt_keys = VALUE #( FOR key IN lt_key_l ( name = key-name value = <fo_data>-(key-name)->* data_type = key-data_type ) ).
+                lt_keys = VALUE #( FOR key IN lt_key_l ( name = key-name
+                                                         value = zzcl_odata_utils=>get_internal(
+                                                                    io_elem_ref = CAST #( cl_abap_elemdescr=>describe_by_name( key-data_type ) )
+                                                                    iv_data = <fo_data>-(key-name)->*
+                                                         )
+                                                         data_type = key-data_type ) ).
               ENDIF.
               UNASSIGN <fo_data>.
               FREE lo_data.
